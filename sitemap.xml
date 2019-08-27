@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/archives/index.html</loc>
+    
+    <lastmod>2019-08-27T14:22:56.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2019-08-27T14:21:08.196Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2019-08-27T14:20:51.382Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/08/27/MarkDown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</loc>
     
     <lastmod>2019-08-27T08:37:12.497Z</lastmod>
@@ -23,23 +44,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2019-08-27T02:41:05.984Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2019-08-27T02:41:03.249Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2019-08-27T02:40:59.921Z</lastmod>
     
   </url>
   
