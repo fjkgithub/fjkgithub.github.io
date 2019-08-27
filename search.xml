@@ -1,82 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>MarkDown使用手册</title>
-      <link href="/2019/08/27/MarkDown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
-      <url>/2019/08/27/MarkDown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
-      
-        <content type="html"><![CDATA[<p>##标题</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure><p>##换行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;/br&gt;</span><br></pre></td></tr></table></figure><p>##分割线</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure><p>##文字样式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">&lt;/br&gt;</span><br><span class="line">**加粗**</span><br><span class="line">&lt;/br&gt;</span><br><span class="line">==高亮==</span><br><span class="line">&lt;/br&gt;</span><br><span class="line">~~划线~~</span><br><span class="line">&lt;font color=#2196F3 size=2 face=&quot;宋体&quot;&gt;宋体大小为2蓝色的字&lt;/font&gt;</span><br><span class="line">&lt;center&gt;居中&lt;/center&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[MarkDown使用手册]]></title>
+    <url>%2F2019%2F08%2F27%2FMarkDown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%2F</url>
+    <content type="text"><![CDATA[##标题 123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 ##换行 1&lt;/br&gt; ##分割线 1*** ##文字样式 123456789*斜体*&lt;/br&gt;**加粗**&lt;/br&gt;==高亮==&lt;/br&gt;~~划线~~&lt;font color=#2196F3 size=2 face=&quot;宋体&quot;&gt;宋体大小为2蓝色的字&lt;/font&gt;&lt;center&gt;居中&lt;/center&gt;]]></content>
       <categories>
-          
-          <category> MarkDown </category>
-          
+        <category>MarkDown</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> MarkDown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>jsonUtils</title>
-      <link href="/2019/08/27/jsonUtils/"/>
-      <url>/2019/08/27/jsonUtils/</url>
-      
-        <content type="html"><![CDATA[<h1 id="jsonUtil工具类"><a href="#jsonUtil工具类" class="headerlink" title="jsonUtil工具类"></a>jsonUtil工具类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">package com.zzcm.shortvideospider.util;</span><br><span class="line"></span><br><span class="line">import com.fasterxml.jackson.core.JsonParseException;</span><br><span class="line">import com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line">import com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line">import com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line">import com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line">import org.apache.commons.lang3.StringUtils;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">public class JsonUtil &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);</span><br><span class="line">    private static final ObjectMapper mapper = new ObjectMapper();</span><br><span class="line"></span><br><span class="line">    public static ObjectMapper getMapper() &#123;</span><br><span class="line">        return mapper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String toJson(Object object) &#123;</span><br><span class="line">        String json = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            json = mapper.writeValueAsString(object);</span><br><span class="line">        &#125; catch (JsonProcessingException var3) &#123;</span><br><span class="line">            logger.warn(var3.getMessage(), var3);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 功能描述: fromJson(Stinrg,List.class,Map.class)</span><br><span class="line">     * @Author: fjk</span><br><span class="line">     * @Date: 2019/8/27 14:00</span><br><span class="line">     */</span><br><span class="line">    public static &lt;T&gt; T fromJson(String json, Class&lt;?&gt; collectionClass, Class... elementClasses) &#123;</span><br><span class="line">        Object t = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            t = mapper.readValue(json, mapper.getTypeFactory().constructParametricType(collectionClass, elementClasses));</span><br><span class="line">        &#125; catch (Exception var5) &#123;</span><br><span class="line">            logger.warn(var5.getMessage(), var5);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return (T) t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static &lt;T&gt; T object(String json, Class&lt;T&gt; clazz) &#123;</span><br><span class="line">        if(StringUtils.isEmpty(json)) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            return mapper.readValue(json, clazz);</span><br><span class="line">        &#125; catch (JsonParseException var3) &#123;</span><br><span class="line">            logger.error(&quot;JsonParseException&quot;, var3);</span><br><span class="line">        &#125; catch (RuntimeException var4) &#123;</span><br><span class="line">            logger.error(&quot;Runtime exception &quot; + StringUtils.abbreviate(json, 80), var4);</span><br><span class="line">        &#125; catch (Exception var5) &#123;</span><br><span class="line">            logger.error(&quot;Exception &quot; + StringUtils.abbreviate(json, 80), var5);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static &lt;T&gt; T object(String json, TypeReference typeReference) &#123;</span><br><span class="line">        Object t = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            t = mapper.readValue(json, typeReference);</span><br><span class="line">        &#125; catch (Exception var4) &#123;</span><br><span class="line">            logger.warn(var4.getMessage(), var4);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return (T) t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static Map&lt;String, ?&gt; getMapFromJson(String json) &#123;</span><br><span class="line">        Map map = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            map = (Map)mapper.readValue(json, Map.class);</span><br><span class="line">        &#125; catch (Exception var3) &#123;</span><br><span class="line">            logger.warn(var3.getMessage(), var3);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static &#123;</span><br><span class="line">        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span><br><span class="line">        mapper.setDateFormat(new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="bean转json字符串"><a href="#bean转json字符串" class="headerlink" title="bean转json字符串"></a>bean转json字符串</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = JsonUtil.toJson(Bean);</span><br></pre></td></tr></table></figure><h2 id="json字符串转一层bean"><a href="#json字符串转一层bean" class="headerlink" title="json字符串转一层bean"></a>json字符串转一层bean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bean bean = JsonUtil.object(String,Bean.class);</span><br></pre></td></tr></table></figure><h2 id="json字符串转多层嵌套bean"><a href="#json字符串转多层嵌套bean" class="headerlink" title="json字符串转多层嵌套bean"></a>json字符串转多层嵌套bean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bean bean = JsonUtil.object(String,new TypeReference(Bean)&#123;&#125;);</span><br></pre></td></tr></table></figure><h2 id="json字符串转Map"><a href="#json字符串转Map" class="headerlink" title="json字符串转Map"></a>json字符串转Map</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Sintrg,Objext&gt; map = JsonUtil.getMapFromJson(Bean);</span><br></pre></td></tr></table></figure><h2 id="json字符串转List-lt-Map-lt-Sintrg-Objext-gt-gt"><a href="#json字符串转List-lt-Map-lt-Sintrg-Objext-gt-gt" class="headerlink" title="json字符串转List&lt;Map&lt;Sintrg,Objext&gt;&gt;"></a>json字符串转List&lt;Map&lt;Sintrg,Objext&gt;&gt;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Map&lt;Sintrg,Objext&gt;&gt; listMap = fromJson(Stinrg,List.class,Map.class);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jsonUtils]]></title>
+    <url>%2F2019%2F08%2F27%2FjsonUtils%2F</url>
+    <content type="text"><![CDATA[jsonUtil工具类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798package com.zzcm.shortvideospider.util;import com.fasterxml.jackson.core.JsonParseException;import com.fasterxml.jackson.core.JsonProcessingException;import com.fasterxml.jackson.core.type.TypeReference;import com.fasterxml.jackson.databind.DeserializationFeature;import com.fasterxml.jackson.databind.ObjectMapper;import org.apache.commons.lang3.StringUtils;import org.slf4j.Logger;import org.slf4j.LoggerFactory;import java.text.SimpleDateFormat;import java.util.Map;public class JsonUtil &#123; private static final Logger logger = LoggerFactory.getLogger(JsonUtil.class); private static final ObjectMapper mapper = new ObjectMapper(); public static ObjectMapper getMapper() &#123; return mapper; &#125; public static String toJson(Object object) &#123; String json = null; try &#123; json = mapper.writeValueAsString(object); &#125; catch (JsonProcessingException var3) &#123; logger.warn(var3.getMessage(), var3); &#125; return json; &#125; /** * 功能描述: fromJson(Stinrg,List.class,Map.class) * @Author: fjk * @Date: 2019/8/27 14:00 */ public static &lt;T&gt; T fromJson(String json, Class&lt;?&gt; collectionClass, Class... elementClasses) &#123; Object t = null; try &#123; t = mapper.readValue(json, mapper.getTypeFactory().constructParametricType(collectionClass, elementClasses)); &#125; catch (Exception var5) &#123; logger.warn(var5.getMessage(), var5); &#125; return (T) t; &#125; public static &lt;T&gt; T object(String json, Class&lt;T&gt; clazz) &#123; if(StringUtils.isEmpty(json)) &#123; return null; &#125; try &#123; return mapper.readValue(json, clazz); &#125; catch (JsonParseException var3) &#123; logger.error(&quot;JsonParseException&quot;, var3); &#125; catch (RuntimeException var4) &#123; logger.error(&quot;Runtime exception &quot; + StringUtils.abbreviate(json, 80), var4); &#125; catch (Exception var5) &#123; logger.error(&quot;Exception &quot; + StringUtils.abbreviate(json, 80), var5); &#125; return null; &#125; public static &lt;T&gt; T object(String json, TypeReference typeReference) &#123; Object t = null; try &#123; t = mapper.readValue(json, typeReference); &#125; catch (Exception var4) &#123; logger.warn(var4.getMessage(), var4); &#125; return (T) t; &#125; public static Map&lt;String, ?&gt; getMapFromJson(String json) &#123; Map map = null; try &#123; map = (Map)mapper.readValue(json, Map.class); &#125; catch (Exception var3) &#123; logger.warn(var3.getMessage(), var3); &#125; return map; &#125; static &#123; mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); mapper.setDateFormat(new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;)); &#125;&#125; bean转json字符串1String str = JsonUtil.toJson(Bean); json字符串转一层bean1Bean bean = JsonUtil.object(String,Bean.class); json字符串转多层嵌套bean1Bean bean = JsonUtil.object(String,new TypeReference(Bean)&#123;&#125;); json字符串转Map1Map&lt;Sintrg,Objext&gt; map = JsonUtil.getMapFromJson(Bean); json字符串转List&lt;Map&lt;Sintrg,Objext&gt;&gt;1List&lt;Map&lt;Sintrg,Objext&gt;&gt; listMap = fromJson(Stinrg,List.class,Map.class);]]></content>
       <categories>
-          
-          <category> json </category>
-          
+        <category>json</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> json </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hexo bulid</title>
-      <link href="/2019/08/26/hello-world/"/>
-      <url>/2019/08/26/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="http://www.baidu.com" target="_blank" rel="noopener">baidu</a><br>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
+      <tags>
+        <tag>json</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo bulid]]></title>
+    <url>%2F2019%2F08%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: baiduMore info: Deployment]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo rule </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>hexo rule</tag>
+      </tags>
+  </entry>
 </search>
