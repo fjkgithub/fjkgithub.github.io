@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[idea快捷键]]></title>
+    <url>%2F2019%2F09%2F16%2Fidea%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[常用快捷键 快捷键 提示 alt+insert 生成代码(如get,set方法,构造函数等) alt+enter 导入包 alt+F7 查看某个方法在哪里有用到,或者按ctrl+鼠标点击 ctrl+e 最近更改的代码 ctrl+r 替换文本 ctrl+f 查找文本 ctrl+空格 代码提示 ctrl+p 方法参数提示 ctrl+shit+space 自动提示 ctrl+shit+enter 自动补全 ctrl+x 删除行 ctrl+d 复制行 ctrl＋F12 可以显示当前文件的结构 ctrl+alt+ left/right 返回至上次浏览的位置 ctrl＋alt＋t 可以把代码包在一块内，例如try/catch if ctrl+alt+l 格式化代码 ctrl+alt+o 去掉没有用的import包 ctrl+alt+t 快速生成if else try catch ctrl+h 查询类的父类和子类的层级关系 ctrl+alt+b 查看子类方法实现 ctrl+/ 或 ctrl+chift+/ 注释（// 或者/…/ ） shift+shift 搜索任何東西 shift+F6 重构 – 重命名 ctrl+n 查找哪个类 ctrl+shift+n 查找哪个文件]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MarkDown使用手册]]></title>
     <url>%2F2019%2F08%2F27%2FMarkDown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%2F</url>
     <content type="text"><![CDATA[标题123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 换行1&lt;/br&gt; 分割线1*** 文字样式1234567891011*斜体***加粗**==高亮==~~划线~~&lt;font color=#2196F3 size=2 face=&quot;宋体&quot;&gt;宋体大小为2蓝色的字&lt;/font&gt;&lt;center&gt;居中&lt;/center&gt; 斜体加粗==高亮==划线宋体大小为2蓝色的字 居中 列表123- 列表1 - 列表1.1 - 列表1.2 列表1 列表1.1 列表1.2 链接以及图片123[少数派](https://sspai.com/)![logo](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2634294714,2265844648&amp;fm=58&amp;s=4EE6885691B0CD92947DB9F002005035&amp;bpow=121&amp;bpoh=75) 少数派 表格1234大标题1|大标题2|大标题3--|--|--内容1|内容2|内容3内容1|内容2|内容3 大标题1 大标题2 大标题3 内容1 内容2 内容3 内容1 内容2 内容3 插入图片 大小设置12方案一：默认大小 ![](/images/Desert.jpg) 方案二：设置大小 &lt;img width=400 src=&quot;/images/Desert.jpg&quot; &gt;]]></content>

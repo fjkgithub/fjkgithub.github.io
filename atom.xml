@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/fjkgithub/fjkgithub.github.io/"/>
-  <updated>2019-09-16T08:04:39.138Z</updated>
+  <updated>2019-09-16T09:34:06.791Z</updated>
   <id>https://github.com/fjkgithub/fjkgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea快捷键</title>
+    <link href="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/idea快捷键/</id>
+    <published>2019-09-16T09:11:26.000Z</published>
+    <updated>2019-09-16T09:34:06.791Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table><thead><tr><th>快捷键</th><th>提示</th></tr></thead><tbody><tr><td>alt+insert</td><td>生成代码(如get,set方法,构造函数等)</td></tr><tr><td>alt+enter</td><td>导入包</td></tr><tr><td>alt+F7</td><td>查看某个方法在哪里有用到,或者按ctrl+鼠标点击</td></tr><tr><td>ctrl+e</td><td>最近更改的代码</td></tr><tr><td>ctrl+r</td><td>替换文本</td></tr><tr><td>ctrl+f</td><td>查找文本</td></tr><tr><td>ctrl+空格</td><td>代码提示</td></tr><tr><td>ctrl+p</td><td>方法参数提示</td></tr><tr><td>ctrl+shit+space</td><td>自动提示</td></tr><tr><td>ctrl+shit+enter</td><td>自动补全</td></tr><tr><td>ctrl+x</td><td>删除行</td></tr><tr><td>ctrl+d</td><td>复制行</td></tr><tr><td>ctrl＋F12</td><td>可以显示当前文件的结构</td></tr><tr><td>ctrl+alt+ left/right</td><td>返回至上次浏览的位置</td></tr><tr><td>ctrl＋alt＋t</td><td>可以把代码包在一块内，例如try/catch if</td></tr><tr><td>ctrl+alt+l</td><td>格式化代码</td></tr><tr><td>ctrl+alt+o</td><td>去掉没有用的import包</td></tr><tr><td>ctrl+alt+t</td><td>快速生成if else try catch</td></tr><tr><td>ctrl+h</td><td>查询类的父类和子类的层级关系</td></tr><tr><td>ctrl+alt+b</td><td>查看子类方法实现</td></tr><tr><td>ctrl+/ 或 ctrl+chift+/</td><td>注释（// 或者/<em>…</em>/ ）</td></tr><tr><td>shift+shift</td><td>搜索任何東西</td></tr><tr><td>shift+F6</td><td>重构 – 重命名</td></tr><tr><td>ctrl+n</td><td>查找哪个类</td></tr><tr><td>ctrl+shift+n</td><td>查找哪个文件</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;常用快捷键&quot;&gt;&lt;a href=&quot;#常用快捷键&quot; class=&quot;headerlink&quot; title=&quot;常用快捷键&quot;&gt;&lt;/a&gt;常用快捷键&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;快捷键&lt;/th&gt;
+&lt;th&gt;提示&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+      
+    
+    </summary>
+    
+      <category term="idea" scheme="https://github.com/fjkgithub/fjkgithub.github.io/categories/idea/"/>
+    
+    
+      <category term="idea" scheme="https://github.com/fjkgithub/fjkgithub.github.io/tags/idea/"/>
+    
+  </entry>
   
   <entry>
     <title>MarkDown使用手册</title>
