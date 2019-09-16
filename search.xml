@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux常用命令]]></title>
+    <url>%2F2019%2F09%2F16%2Flinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[tail-f fileName命令用于查看文件内容最后10行数据，ctrl+c退出。 最基本的是cat、more和less。看的是文件全部内容，内容很多的话，不方便。 tail -f [ -n Number ] [ File ] 查看最新的，会刷新，可以用ctrl+c 来终止 例如：tail -f -n 10 fileName 查看最后10行最新消息。（默认是10行）chmod授权方式。chown -R更改文件夹的用户 tmp 目录为所有用户可读可写权限：chmod -R 777 /tmp 修改 tmp 目录所属用户为 root，用户组为 root ： chown -R root:root /tmp详细查看某个java项目有没有起、以及项目的进程PID(1)ps -ef |grep 项目名 (2)jps -l --&gt;查看所有java的进程查看linux的各个磁盘的使用率和所占空间df -h查看当前目录及子目录的大小du -h查看当前目录的一级目录的大小du -ah --max-depth=1查看所有文件的详情ll -h cd ~查看某个目录cd .. 查看上一层目录 cd -回到上次的目录查找文件find /home/ad -name iad* 查看/home/ad目录下前缀为iad的所有文件 find /home/ad -inname iad* 查看/home/ad目录下前缀为iad的所有文件（忽略大小写） find /home/ad -size +20M 查看/home/ad目录下大于20M的所有文件压缩和解压(1)zip 文件 ①zip 文件名.zip 源文件 ---》压缩文件 ②zip 目录名.zip 源目录 ----》压缩目录 ③unzip 压缩文件名.zip ---》解压文件 ④unzip -r 压缩目录名.zip ---》解压目录 (2)tar 文件 ①tar -cvf 压缩文件名.tar 源文件 ---》压缩文件 ②tar -xvf 压缩文件名.tar ---》解压文件 (3)tag.gz 文件 ①tar -zcvf 压缩文件名.tar.gz 源文件 ---》压缩文件 ②tar -zxvf 压缩文件名.tar.gz ---》解压文件 (4)gz ①gzip 文件名.gz 源文件 ---》压缩文件 ②gzip -r 目录名.gz 源目录 ----》压缩目录 ③guzip 文件名.gz ----》解压文件 ④guzip -r 目录名.gz ---》解压目录 查看输入命令的历史记录history输出重定向(1)shell命令 &gt;&gt; 文件名.log 2&gt;&amp;1 同时追加正确命令和错误命令到 指定文件 (2)shell命令 &gt;&gt;文件.log 1 2&gt;&gt;文件.log 2 把正确的命令输出到文件1错误的文件2查看路由表route -n将本机文件复制到远程服务器上scp 文件的绝对路径 root@远程ip:远程具体目录 Lg: scp /home/ad/log.txt root@192.168.1.110:/home/log常用快捷键ctrl+c 终止当前命令 ctrl+l 清屏 相当于clear]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[idea快捷键]]></title>
     <url>%2F2019%2F09%2F16%2Fidea%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[常用快捷键 快捷键 提示 alt+insert 生成代码(如get,set方法,构造函数等) alt+enter 导入包 alt+F7 查看某个方法在哪里有用到,或者按ctrl+鼠标点击 ctrl+e 最近更改的代码 ctrl+r 替换文本 ctrl+f 查找文本 ctrl+空格 代码提示 ctrl+p 方法参数提示 ctrl+shit+space 自动提示 ctrl+shit+enter 自动补全 ctrl+x 删除行 ctrl+d 复制行 ctrl＋F12 可以显示当前文件的结构 ctrl+alt+ left/right 返回至上次浏览的位置 ctrl＋alt＋t 可以把代码包在一块内，例如try/catch if ctrl+alt+l 格式化代码 ctrl+alt+o 去掉没有用的import包 ctrl+alt+t 快速生成if else try catch ctrl+h 查询类的父类和子类的层级关系 ctrl+alt+b 查看子类方法实现 ctrl+/ 或 ctrl+chift+/ 注释（// 或者/…/ ） shift+shift 搜索任何東西 shift+F6 重构 – 重命名 ctrl+n 查找哪个类 ctrl+shift+n 查找哪个文件]]></content>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/fjkgithub/fjkgithub.github.io/"/>
-  <updated>2019-09-16T09:34:06.791Z</updated>
+  <updated>2019-09-16T09:44:22.432Z</updated>
   <id>https://github.com/fjkgithub/fjkgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/linux常用命令/</id>
+    <published>2019-09-16T09:38:22.000Z</published>
+    <updated>2019-09-16T09:44:22.432Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="tail-f-fileName命令"><a href="#tail-f-fileName命令" class="headerlink" title="tail-f fileName命令"></a>tail-f fileName命令</h2><pre><code>用于查看文件内容最后10行数据，ctrl+c退出。 最基本的是cat、more和less。看的是文件全部内容，内容很多的话，不方便。tail -f  [ -n Number ] [ File ]   查看最新的，会刷新，可以用ctrl+c 来终止例如：tail -f -n 10 fileName 查看最后10行最新消息。（默认是10行）</code></pre><h2 id="chmod授权方式。"><a href="#chmod授权方式。" class="headerlink" title="chmod授权方式。"></a>chmod授权方式。</h2><pre><code>chown -R更改文件夹的用户tmp 目录为所有用户可读可写权限：chmod -R 777 /tmp         修改 tmp 目录所属用户为 root，用户组为 root ： chown -R root:root /tmp</code></pre><h2 id="详细查看某个java项目有没有起、以及项目的进程PID"><a href="#详细查看某个java项目有没有起、以及项目的进程PID" class="headerlink" title="详细查看某个java项目有没有起、以及项目的进程PID"></a>详细查看某个java项目有没有起、以及项目的进程PID</h2><pre><code>(1)ps -ef |grep 项目名(2)jps -l                --&gt;查看所有java的进程</code></pre><h2 id="查看linux的各个磁盘的使用率和所占空间"><a href="#查看linux的各个磁盘的使用率和所占空间" class="headerlink" title="查看linux的各个磁盘的使用率和所占空间"></a>查看linux的各个磁盘的使用率和所占空间</h2><pre><code>df -h</code></pre><h2 id="查看当前目录及子目录的大小"><a href="#查看当前目录及子目录的大小" class="headerlink" title="查看当前目录及子目录的大小"></a>查看当前目录及子目录的大小</h2><pre><code>du -h</code></pre><h2 id="查看当前目录的一级目录的大小"><a href="#查看当前目录的一级目录的大小" class="headerlink" title="查看当前目录的一级目录的大小"></a>查看当前目录的一级目录的大小</h2><pre><code>du -ah --max-depth=1</code></pre><h2 id="查看所有文件的详情"><a href="#查看所有文件的详情" class="headerlink" title="查看所有文件的详情"></a>查看所有文件的详情</h2><pre><code>ll -h </code></pre><h2 id="cd-查看某个目录"><a href="#cd-查看某个目录" class="headerlink" title="cd ~查看某个目录"></a>cd ~查看某个目录</h2><pre><code>cd .. 查看上一层目录   cd -回到上次的目录</code></pre><h2 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h2><pre><code>find /home/ad -name iad*   查看/home/ad目录下前缀为iad的所有文件find /home/ad -inname iad*  查看/home/ad目录下前缀为iad的所有文件（忽略大小写）find /home/ad -size +20M 查看/home/ad目录下大于20M的所有文件</code></pre><h2 id="压缩和解压"><a href="#压缩和解压" class="headerlink" title="压缩和解压"></a>压缩和解压</h2><pre><code>(1)zip 文件①zip 文件名.zip 源文件  ---》压缩文件②zip 目录名.zip 源目录  ----》压缩目录③unzip 压缩文件名.zip  ---》解压文件④unzip -r 压缩目录名.zip  ---》解压目录(2)tar 文件①tar    -cvf 压缩文件名.tar 源文件 ---》压缩文件②tar    -xvf 压缩文件名.tar        ---》解压文件(3)tag.gz 文件①tar    -zcvf 压缩文件名.tar.gz 源文件 ---》压缩文件②tar    -zxvf 压缩文件名.tar.gz        ---》解压文件(4)gz①gzip 文件名.gz 源文件  ---》压缩文件②gzip -r 目录名.gz 源目录  ----》压缩目录③guzip 文件名.gz          ----》解压文件④guzip -r 目录名.gz        ---》解压目录    </code></pre><h2 id="查看输入命令的历史记录"><a href="#查看输入命令的历史记录" class="headerlink" title="查看输入命令的历史记录"></a>查看输入命令的历史记录</h2><pre><code>history</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>(1)shell命令 &gt;&gt; 文件名.log 2&gt;&amp;1  同时追加正确命令和错误命令到 指定文件(2)shell命令 &gt;&gt;文件.log 1 2&gt;&gt;文件.log 2 把正确的命令输出到文件1错误的文件2</code></pre><h2 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h2><pre><code>route -n</code></pre><h2 id="将本机文件复制到远程服务器上"><a href="#将本机文件复制到远程服务器上" class="headerlink" title="将本机文件复制到远程服务器上"></a>将本机文件复制到远程服务器上</h2><pre><code>scp 文件的绝对路径 root@远程ip:远程具体目录Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><pre><code>ctrl+c 终止当前命令  ctrl+l 清屏 相当于clear</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;tail-f-fileName命令&quot;&gt;&lt;a href=&quot;#tail-f-fileName命令&quot; class=&quot;headerlink&quot; title=&quot;tail-f fileName命令&quot;&gt;&lt;/a&gt;tail-f fileName命令&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;用于
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://github.com/fjkgithub/fjkgithub.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://github.com/fjkgithub/fjkgithub.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>idea快捷键</title>

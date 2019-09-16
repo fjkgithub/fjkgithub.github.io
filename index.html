@@ -286,6 +286,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/16/linux常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fjk">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/fjkgithub.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fjk_blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2019/09/16/linux常用命令/" itemprop="url">linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-16T17:38:22+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="tail-f-fileName命令"><a href="#tail-f-fileName命令" class="headerlink" title="tail-f fileName命令"></a>tail-f fileName命令</h2><pre><code>用于查看文件内容最后10行数据，ctrl+c退出。 
+最基本的是cat、more和less。看的是文件全部内容，内容很多的话，不方便。
+tail -f  [ -n Number ] [ File ]   查看最新的，会刷新，可以用ctrl+c 来终止
+例如：tail -f -n 10 fileName 查看最后10行最新消息。（默认是10行）</code></pre><h2 id="chmod授权方式。"><a href="#chmod授权方式。" class="headerlink" title="chmod授权方式。"></a>chmod授权方式。</h2><pre><code>chown -R更改文件夹的用户
+tmp 目录为所有用户可读可写权限：chmod -R 777 /tmp         
+修改 tmp 目录所属用户为 root，用户组为 root ： chown -R root:root /tmp</code></pre><h2 id="详细查看某个java项目有没有起、以及项目的进程PID"><a href="#详细查看某个java项目有没有起、以及项目的进程PID" class="headerlink" title="详细查看某个java项目有没有起、以及项目的进程PID"></a>详细查看某个java项目有没有起、以及项目的进程PID</h2><pre><code>(1)ps -ef |grep 项目名
+(2)jps -l                --&gt;查看所有java的进程</code></pre><h2 id="查看linux的各个磁盘的使用率和所占空间"><a href="#查看linux的各个磁盘的使用率和所占空间" class="headerlink" title="查看linux的各个磁盘的使用率和所占空间"></a>查看linux的各个磁盘的使用率和所占空间</h2><pre><code>df -h</code></pre><h2 id="查看当前目录及子目录的大小"><a href="#查看当前目录及子目录的大小" class="headerlink" title="查看当前目录及子目录的大小"></a>查看当前目录及子目录的大小</h2><pre><code>du -h</code></pre><h2 id="查看当前目录的一级目录的大小"><a href="#查看当前目录的一级目录的大小" class="headerlink" title="查看当前目录的一级目录的大小"></a>查看当前目录的一级目录的大小</h2><pre><code>du -ah --max-depth=1</code></pre><h2 id="查看所有文件的详情"><a href="#查看所有文件的详情" class="headerlink" title="查看所有文件的详情"></a>查看所有文件的详情</h2><pre><code>ll -h </code></pre><h2 id="cd-查看某个目录"><a href="#cd-查看某个目录" class="headerlink" title="cd ~查看某个目录"></a>cd ~查看某个目录</h2><pre><code>cd .. 查看上一层目录   cd -回到上次的目录</code></pre><h2 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h2><pre><code>find /home/ad -name iad*   查看/home/ad目录下前缀为iad的所有文件
+find /home/ad -inname iad*  查看/home/ad目录下前缀为iad的所有文件（忽略大小写）
+find /home/ad -size +20M 查看/home/ad目录下大于20M的所有文件</code></pre><h2 id="压缩和解压"><a href="#压缩和解压" class="headerlink" title="压缩和解压"></a>压缩和解压</h2><pre><code>(1)zip 文件
+①zip 文件名.zip 源文件  ---》压缩文件
+②zip 目录名.zip 源目录  ----》压缩目录
+③unzip 压缩文件名.zip  ---》解压文件
+④unzip -r 压缩目录名.zip  ---》解压目录
+(2)tar 文件
+①tar    -cvf 压缩文件名.tar 源文件 ---》压缩文件
+②tar    -xvf 压缩文件名.tar        ---》解压文件
+(3)tag.gz 文件
+①tar    -zcvf 压缩文件名.tar.gz 源文件 ---》压缩文件
+②tar    -zxvf 压缩文件名.tar.gz        ---》解压文件
+(4)gz
+①gzip 文件名.gz 源文件  ---》压缩文件
+②gzip -r 目录名.gz 源目录  ----》压缩目录
+③guzip 文件名.gz          ----》解压文件
+④guzip -r 目录名.gz        ---》解压目录    </code></pre><h2 id="查看输入命令的历史记录"><a href="#查看输入命令的历史记录" class="headerlink" title="查看输入命令的历史记录"></a>查看输入命令的历史记录</h2><pre><code>history</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>(1)shell命令 &gt;&gt; 文件名.log 2&gt;&amp;1  同时追加正确命令和错误命令到 指定文件
+(2)shell命令 &gt;&gt;文件.log 1 2&gt;&gt;文件.log 2 把正确的命令输出到文件1错误的文件2</code></pre><h2 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h2><pre><code>route -n</code></pre><h2 id="将本机文件复制到远程服务器上"><a href="#将本机文件复制到远程服务器上" class="headerlink" title="将本机文件复制到远程服务器上"></a>将本机文件复制到远程服务器上</h2><pre><code>scp 文件的绝对路径 root@远程ip:远程具体目录
+Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><pre><code>ctrl+c 终止当前命令  ctrl+l 清屏 相当于clear</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/16/idea快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1067,7 +1233,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1078,7 +1244,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1089,7 +1255,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
