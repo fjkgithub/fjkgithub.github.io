@@ -286,6 +286,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/18/easyExcel导入导出/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fjk">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/fjkgithub.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fjk_blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2019/09/18/easyExcel导入导出/" itemprop="url">easyExcel导入导出</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-18T15:26:20+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/excel/" itemprop="url" rel="index">
+                    <span itemprop="name">excel</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="依赖的jar包"><a href="#依赖的jar包" class="headerlink" title="依赖的jar包"></a>依赖的jar包</h2><p>pom.xml导入依赖包</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;easyexcel&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.1.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExportExcel</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * fileName: 表明</span></span><br><span class="line"><span class="comment">     * keys：字段</span></span><br><span class="line"><span class="comment">     * Map&lt;String, Object&gt;map：字段对应的值</span></span><br><span class="line"><span class="comment">     * titleList：表头</span></span><br><span class="line"><span class="comment">     * List&lt;Map&lt;String, Object&gt;&gt; mapList：所有对象的字段对应的值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">(HttpServletResponse response, String fileName,List&lt;String&gt; keys, List&lt;String&gt; titleList,List&lt;Map&lt;String, Object&gt;&gt; mapList)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 文件输出位置</span></span><br><span class="line">        OutputStream out = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 取得输出流</span></span><br><span class="line">            out = response.getOutputStream();</span><br><span class="line">            <span class="comment">// 中文文件名问题</span></span><br><span class="line">            String attachment = <span class="keyword">new</span> String((<span class="string">"attachment;filename="</span> + fileName + <span class="string">".xlsx"</span>).getBytes(<span class="string">"UTF-8"</span>), <span class="string">"ISO8859-1"</span>);</span><br><span class="line">            <span class="comment">// 清空输出流</span></span><br><span class="line">            response.reset();</span><br><span class="line">            <span class="comment">// 设定输出文件头</span></span><br><span class="line">            response.setHeader(<span class="string">"Content-disposition"</span>, attachment);</span><br><span class="line">            <span class="comment">// 定义输出类型</span></span><br><span class="line">            response.setContentType(<span class="string">"application/msexcel"</span>);</span><br><span class="line"></span><br><span class="line">            ExcelWriter writer = <span class="keyword">new</span> ExcelWriter(out, ExcelTypeEnum.XLSX);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 写仅有一个 Sheet 的 Excel 文件, 此场景较为通用</span></span><br><span class="line">            Sheet sheet1 = <span class="keyword">new</span> Sheet(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 设置标题</span></span><br><span class="line">            Table table = <span class="keyword">new</span> Table(<span class="number">1</span>);</span><br><span class="line">            List&lt;List&lt;String&gt;&gt; titles = <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (String title : titleList)&#123;</span><br><span class="line">                titles.add(Arrays.asList(title));</span><br><span class="line">            &#125;</span><br><span class="line">            table.setHead(titles);</span><br><span class="line"></span><br><span class="line">            List&lt;List&lt;Object&gt;&gt; dateList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            mapList.stream().forEach(x-&gt;&#123;</span><br><span class="line">                List&lt;Object&gt; row = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                <span class="keyword">for</span> (Object str : keys)&#123;</span><br><span class="line">                    Object obj = x.get(str);</span><br><span class="line">                    row.add(obj);</span><br><span class="line">                &#125;</span><br><span class="line">                dateList.add(row);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            writer.write1(dateList,sheet1,table);</span><br><span class="line">            <span class="comment">// 第一个 sheet 名称</span></span><br><span class="line">            sheet1.setSheetName(<span class="string">"第一个sheet"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将上下文中的最终 outputStream 写入到指定文件中</span></span><br><span class="line">            writer.finish();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">"导出["</span> + fileName + <span class="string">"]报表异常!"</span> + e.getMessage(), e);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (out != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    out.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    log.error(<span class="string">"关闭流异常!"</span> + e.getMessage(), e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 导入excel</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> inputStream</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> excelListener</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 需继承BaseRowModel基础类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> suffixName 文件后缀</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readExcel</span><span class="params">(InputStream inputStream, ExcelListener excelListener,Class clazz,String suffixName)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ExcelTypeEnum excelTypeEnum;</span><br><span class="line">            <span class="keyword">if</span> (ExcelTypeEnum.XLSX.getValue().equalsIgnoreCase(suffixName)) &#123;</span><br><span class="line">                excelTypeEnum = ExcelTypeEnum.XLSX;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ExcelTypeEnum.XLS.getValue().equalsIgnoreCase(suffixName)) &#123;</span><br><span class="line">                excelTypeEnum = ExcelTypeEnum.XLS;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"文件上传格式错误"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ExcelReader excelReader = <span class="keyword">new</span> ExcelReader(inputStream,excelTypeEnum,<span class="keyword">null</span>, excelListener);</span><br><span class="line">            excelReader.read(<span class="keyword">new</span> Sheet(<span class="number">1</span>,<span class="number">1</span>,clazz));</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            log.error(<span class="string">"导入文件异常"</span>,e);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"导入文件失败"</span>);</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(inputStream != <span class="keyword">null</span>)&#123;</span><br><span class="line">                inputStream.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取excel</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> inputStream</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz 需继承BaseRowModel基础类</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> suffixName</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Object&gt; <span class="title">readExcel</span><span class="params">(InputStream inputStream,Class clazz,String suffixName)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        ExcelListener listener = <span class="keyword">new</span> ExcelListener();</span><br><span class="line"></span><br><span class="line">        readExcel(inputStream,listener,clazz,suffixName);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> listener.getDataList();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导出excel的使用类"><a href="#导出excel的使用类" class="headerlink" title="导出excel的使用类"></a>导出excel的使用类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/commandParse"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommandParseController</span> <span class="keyword">extends</span> <span class="title">BaseAction</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CommandParseService commandParseService;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分页查询</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/page"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">pageChannel</span><span class="params">(CommandParse commandParse)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span> excel = request.getParameter(<span class="string">"excel"</span>)!= <span class="keyword">null</span> &amp;&amp; Boolean.parseBoolean(params.get(<span class="string">"excel"</span>) + <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            resultBean = commandParseService.pageAll(excel,commandParse,getBaseConditionVo());</span><br><span class="line">            <span class="comment">//渠道列表</span></span><br><span class="line">            List&lt;Channel&gt; channels = channelService.getChannelList();</span><br><span class="line">            mv.addObject(<span class="string">"commandParse"</span>,commandParse);</span><br><span class="line">            mv.addObject(<span class="string">"channels"</span>,channels);</span><br><span class="line">            <span class="keyword">if</span> (excel)&#123;</span><br><span class="line">                ExportBean exportBean = <span class="keyword">new</span> ExportBean();</span><br><span class="line">                exportBean.setPageNow(<span class="number">0</span>);</span><br><span class="line">				<span class="comment">//导出10万条</span></span><br><span class="line">                exportBean.setPageSize(<span class="number">100000</span>);</span><br><span class="line">                Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">                List&lt;CommandParse&gt; list = resultBean.getResults();</span><br><span class="line">                map.put(<span class="string">"list"</span>, list);</span><br><span class="line">                map.put(<span class="string">"param"</span>, exportBean);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ModelAndView(<span class="keyword">new</span> CommandCodeExport(), map);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            logger.error(e.getMessage());</span><br><span class="line">            <span class="keyword">return</span> ajaxDoneError(MessageCode.SERVER_ERROR[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pageResult(resultBean, <span class="string">"user/ad/pageCommandParse"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommandCodeExport</span> <span class="keyword">extends</span> <span class="title">AbstractExcelView</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">buildExcelDocument</span><span class="params">(Map&lt;String, Object&gt; paramMap,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      HSSFWorkbook workbook, HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      HttpServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">        List&lt;CommandParse&gt; list = (List&lt;CommandParse&gt;) paramMap.get(<span class="string">"list"</span>);</span><br><span class="line">        ExportBean param = (ExportBean) paramMap.get(<span class="string">"param"</span>);</span><br><span class="line">        <span class="comment">//导出显示列</span></span><br><span class="line">        String showClo = (String) paramMap.get(<span class="string">"showClo"</span>);</span><br><span class="line">        DecimalFormat df = <span class="keyword">new</span> DecimalFormat(<span class="string">"#.00"</span>);</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; mapList = <span class="keyword">new</span> ArrayList&lt;Map&lt;String, Object&gt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">			<span class="comment">//bean转map</span></span><br><span class="line">            Map&lt;String,Object&gt; map = ExportExcelUtil.&lt;String, Object&gt; BeanJsonMap(list.get(i));</span><br><span class="line">            map.put(<span class="string">"id"</span>,i+<span class="number">1</span>);</span><br><span class="line">            map.put(<span class="string">"updateTime"</span>, DateUtil.formatDate(list.get(i).getUpdateTime(),<span class="string">"yyyy-MM-dd"</span>));</span><br><span class="line">            <span class="keyword">if</span>(list.get(i).getStatus()==<span class="number">1</span>)&#123;</span><br><span class="line">                map.put(<span class="string">"status"</span>,<span class="string">"开启"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                map.put(<span class="string">"status"</span>,<span class="string">"关闭"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            mapList.add(map);</span><br><span class="line">        &#125;</span><br><span class="line">        String fileName = <span class="string">"书籍口令列表"</span>+DateUtil.formatDate(<span class="keyword">new</span> Date(),DateUtil.YYYYMMDDHHMMSS);</span><br><span class="line">        List&lt;String&gt; keysList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        List&lt;String&gt; titlesList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        exportPageColKeysTitle(showClo,keysList, titlesList);</span><br><span class="line">        <span class="comment">//调用导出excel方法</span></span><br><span class="line">        ExportExcel.contextLoads(response,fileName,keysList,titlesList,mapList);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">exportPageColKeysTitle</span><span class="params">(String showClo,List&lt;String&gt; keysList, List&lt;String&gt; titlesList)</span></span>&#123;</span><br><span class="line">        Map&lt;String,String&gt; temp = Constants.commandCodeMap;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; stringStringEntry : temp.entrySet()) &#123;</span><br><span class="line">            keysList.add(stringStringEntry.getKey());</span><br><span class="line">            titlesList.add(stringStringEntry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> &lt;K, V&gt; <span class="function">Map&lt;K, V&gt; <span class="title">BeanJsonMap</span><span class="params">(Object javaBean)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(javaBean == <span class="keyword">null</span> ) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        String json = gson.toJson(javaBean);</span><br><span class="line">        <span class="keyword">return</span> JsonUtil.fromJson(json,Map.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导入excel的使用类"><a href="#导入excel的使用类" class="headerlink" title="导入excel的使用类"></a>导入excel的使用类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 上传Excel文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">   <span class="meta">@RequestMapping</span>(<span class="string">"/uploadFileProgress"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">uploadFileProgress</span><span class="params">(@RequestParam(value = <span class="string">"uploadXls"</span>, required = <span class="keyword">false</span>)</span> MultipartFile pkgFile, Long bookListId)</span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           String fileName = pkgFile.getOriginalFilename();</span><br><span class="line">           String suffixName = fileName.substring(fileName.lastIndexOf(<span class="string">"."</span>));</span><br><span class="line">          List&lt;Object&gt; dataList = ExportExcel.readExcel(pkgFile.getInputStream(),AppBookListBook.class,suffixName);</span><br><span class="line">          appBookListBookService.batchSave(dataList,bookListId);</span><br><span class="line">       &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">           logger.error(e.getMessage());</span><br><span class="line">           <span class="keyword">return</span> ajaxDoneError(MessageCode.SERVER_ERROR[<span class="number">1</span>]);</span><br><span class="line">       &#125;</span><br><span class="line">	<span class="keyword">return</span> ajaxDoneSuccess(<span class="string">"保存成功"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/18/加解密、压缩工具/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1831,7 +1979,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1842,7 +1990,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
               <div class="site-state-item site-state-categories">
                 <a href="categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1853,7 +2001,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
               <div class="site-state-item site-state-tags">
                 <a href="tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
