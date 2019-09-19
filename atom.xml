@@ -48,7 +48,7 @@
     <link href="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/19/mysql%E8%A1%A8%E5%AD%97%E6%AE%B5%E6%94%AF%E6%8C%81emoji%E8%A1%A8%E6%83%85/"/>
     <id>https://github.com/fjkgithub/fjkgithub.github.io/2019/09/19/mysql表字段支持emoji表情/</id>
     <published>2019-09-19T05:58:38.000Z</published>
-    <updated>2019-09-19T06:02:55.015Z</updated>
+    <updated>2019-09-19T06:23:47.885Z</updated>
     
     <content type="html"><![CDATA[<h2 id="修改字段-或者表的编码格式"><a href="#修改字段-或者表的编码格式" class="headerlink" title="修改字段,或者表的编码格式"></a>修改字段,或者表的编码格式</h2><p>一般我们数据编码格式默认设置为utf-8, 但是utf-8并不支持表情,而表情需要utf8mb4编码格式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、修改表的字符集：</span><br><span class="line">ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br><span class="line"> </span><br><span class="line">2、修改字段的字符集：</span><br><span class="line">ALTER TABLE table_name CHANGE column_name column_name VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure><h2 id="修改mysql连接池"><a href="#修改mysql连接池" class="headerlink" title="修改mysql连接池"></a>修改mysql连接池</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.jdbc-url=jdbc:mysql://192.168.0.223:3306/iadmoviesupport?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=root</span><br><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">spring.datasource.connection-init-sql=set names utf8mb4</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -66,7 +66,7 @@
     
       <category term="mysql" scheme="https://github.com/fjkgithub/fjkgithub.github.io/tags/mysql/"/>
     
-      <category term="表情包" scheme="https://github.com/fjkgithub/fjkgithub.github.io/tags/%E8%A1%A8%E6%83%85%E5%8C%85/"/>
+      <category term="emoji表情" scheme="https://github.com/fjkgithub/fjkgithub.github.io/tags/emoji%E8%A1%A8%E6%83%85/"/>
     
   </entry>
   
