@@ -286,6 +286,296 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/19/mysql表建分区/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fjk">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/fjkgithub.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fjk_blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2019/09/19/mysql表建分区/" itemprop="url">mysql表建分区</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T14:07:27+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="建表同时创建分区"><a href="#建表同时创建分区" class="headerlink" title="建表同时创建分区"></a>建表同时创建分区</h2><p>TO_DAYS(<code>date</code>),每天一个分区。date字段一定要是索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user_stats_data` (</span><br><span class="line">`time_id` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">`app_id` BIGINT(20) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;应用id&apos;,</span><br><span class="line">`uid` VARCHAR(50) NOT NULL,</span><br><span class="line">`date` DATE NOT NULL COMMENT &apos;日期&apos;,</span><br><span class="line">`dimension` VARCHAR(255) NOT NULL,</span><br><span class="line">`EPBCODE` INT(11) DEFAULT &apos;0&apos; COMMENT &apos;书籍曝光&apos;,</span><br><span class="line">`BCODE` INT(11) DEFAULT &apos;0&apos; COMMENT &apos;书籍点击&apos;,</span><br><span class="line">UNIQUE KEY `unique_key` (`app_id`,`uid`,`date`,`dimension`),</span><br><span class="line">KEY `date_state_uid_date` (`uid`,`date`,`dimension`),</span><br><span class="line">KEY `date_type` (`date`,`dimension`) USING BTREE,</span><br><span class="line">KEY `date_index` (`date`) USING HASH</span><br><span class="line">) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT=&apos;用户操作节点uid按天汇总表&apos;</span><br><span class="line">PARTITION BY RANGE (TO_DAYS(`date`))</span><br><span class="line">(PARTITION p20190628 VALUES LESS THAN (TO_DAYS(&apos;2019-06-29&apos;)) ENGINE = INNODB,</span><br><span class="line">PARTITION p20190629 VALUES LESS THAN (TO_DAYS(&apos;2019-06-30&apos;)) ENGINE = INNODB);</span><br></pre></td></tr></table></figure>
+
+<h2 id="定时任务每天创建后三天的表分区"><a href="#定时任务每天创建后三天的表分区" class="headerlink" title="定时任务每天创建后三天的表分区"></a>定时任务每天创建后三天的表分区</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateDayPartitonJob</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String table;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String partitonSql;</span><br><span class="line">    <span class="meta">@Resource</span>(name = <span class="string">"buzJdbcTemplate"</span>)</span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 1 * * ?"</span>)</span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//书籍活跃留存统计分区表</span></span><br><span class="line">        table = <span class="string">"app_retention_day_stats"</span>;</span><br><span class="line">        partitonSql = <span class="string">"ALTER TABLE `%s` ADD PARTITION(PARTITION p%s VALUES LESS THAN (TO_DAYS('%s')) ENGINE = INNODB);"</span>;</span><br><span class="line">        createPartiton(table,partitonSql,jdbc);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createPartiton</span><span class="params">(String table,String sql,JdbcTemplate jdbcTemplate)</span></span>&#123;</span><br><span class="line">        log.info(<span class="string">"检测表是否存..."</span>);</span><br><span class="line">        <span class="keyword">boolean</span> isExe = isTable(table,jdbcTemplate);</span><br><span class="line">        log.info(<span class="string">"表情况[若true,则结束.]:"</span>+isExe);</span><br><span class="line">        <span class="keyword">if</span>(!isExe)&#123;</span><br><span class="line">            log.warn(<span class="string">"警告：表不存在:"</span>+table);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String afterZeroDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">0</span>);</span><br><span class="line">        String afterOneDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">1</span>);</span><br><span class="line">        String afterTwoDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">2</span>);</span><br><span class="line">        String afterThreeDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">3</span>);</span><br><span class="line">        createPartiton(table,sql,afterZeroDay,afterOneDay,jdbcTemplate);</span><br><span class="line">        createPartiton(table,sql,afterOneDay,afterTwoDay,jdbcTemplate);</span><br><span class="line">        createPartiton(table,sql,afterTwoDay,afterThreeDay,jdbcTemplate);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createPartiton</span><span class="params">(String table,String partitonSql,String afterDay,String afterTeoDay,JdbcTemplate jdbcTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            log.info(<span class="string">"准备创建分区."</span>);</span><br><span class="line">            <span class="comment">//检查分区是否存在</span></span><br><span class="line">            <span class="keyword">boolean</span> isExits = isPartiton(table,afterDay,jdbcTemplate);</span><br><span class="line">            <span class="keyword">if</span> (isExits)&#123;</span><br><span class="line">                log.info(<span class="string">"table=&#123;&#125;，p=&#123;&#125;以存在该分区"</span>,table,afterDay);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String exe = String.format(partitonSql,table,afterDay,afterTeoDay);</span><br><span class="line">            log.info(<span class="string">"准备执行..."</span>);</span><br><span class="line">            <span class="keyword">int</span> num = jdbcTemplate.update(exe);</span><br><span class="line">            log.info(<span class="string">"执行完成，影响行数:"</span> + num );</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">"创建:`"</span>+table+<span class="string">"`表分区失败"</span>,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTable</span><span class="params">(String table,JdbcTemplate jdbc)</span></span>&#123;</span><br><span class="line">        List list = jdbc.queryForList(String.format(<span class="string">"SHOW TABLES LIKE '%s' "</span>,table));</span><br><span class="line">        <span class="keyword">if</span>(list != <span class="keyword">null</span> &amp;&amp; list.size() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPartiton</span><span class="params">(String table,String date,JdbcTemplate jdbcTemplate)</span></span>&#123;</span><br><span class="line">        String sql =<span class="string">"SELECT partition_name part FROM information_schema.partitions WHERE "</span> +</span><br><span class="line">                <span class="string">"  table_schema = SCHEMA() AND table_name='%s' AND partition_name = '%s' "</span>;</span><br><span class="line">        List list = jdbcTemplate.queryForList(String.format(sql,table,<span class="string">'p'</span>+date));</span><br><span class="line">        <span class="keyword">if</span>(list != <span class="keyword">null</span> &amp;&amp; list.size() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/19/mysql表字段支持emoji表情/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fjk">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/fjkgithub.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fjk_blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="2019/09/19/mysql表字段支持emoji表情/" itemprop="url">mysql表字段支持emoji表情</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T13:58:38+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="修改字段-或者表的编码格式"><a href="#修改字段-或者表的编码格式" class="headerlink" title="修改字段,或者表的编码格式"></a>修改字段,或者表的编码格式</h2><p>一般我们数据编码格式默认设置为utf-8, 但是utf-8并不支持表情,而表情需要utf8mb4编码格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、修改表的字符集：</span><br><span class="line">ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br><span class="line"> </span><br><span class="line">2、修改字段的字符集：</span><br><span class="line">ALTER TABLE table_name CHANGE column_name column_name VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改mysql连接池"><a href="#修改mysql连接池" class="headerlink" title="修改mysql连接池"></a>修改mysql连接池</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.jdbc-url=jdbc:mysql://192.168.0.223:3306/iadmoviesupport?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=root</span><br><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">spring.datasource.connection-init-sql=set names utf8mb4</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/09/19/nginx搭建和配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1600,349 +1890,6 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/08/27/MarkDown使用手册/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fjk">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/fjkgithub.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fjk_blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="2019/08/27/MarkDown使用手册/" itemprop="url">MarkDown使用手册</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-27T14:46:31+08:00">
-                2019-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/MarkDown/" itemprop="url" rel="index">
-                    <span itemprop="name">MarkDown</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;/br&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line"></span><br><span class="line">**加粗**</span><br><span class="line"></span><br><span class="line">==高亮==</span><br><span class="line"></span><br><span class="line">~~划线~~</span><br><span class="line"></span><br><span class="line">&lt;font color=#2196F3 size=2 face=&quot;宋体&quot;&gt;宋体大小为2蓝色的字&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">&lt;center&gt;居中&lt;/center&gt;</span><br></pre></td></tr></table></figure>
-
-<p><em>斜体</em><br><strong>加粗</strong><br>==高亮==<br><del>划线</del><br><font color="#2196F3" size="2" face="宋体">宋体大小为2蓝色的字</font></p>
-<center>居中</center>
-
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 列表1</span><br><span class="line">  - 列表1.1</span><br><span class="line">  - 列表1.2</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>列表1<ul>
-<li>列表1.1</li>
-<li>列表1.2</li>
-</ul>
-</li>
-</ul>
-<h2 id="链接以及图片"><a href="#链接以及图片" class="headerlink" title="链接以及图片"></a>链接以及图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[少数派](https://sspai.com/)</span><br><span class="line"></span><br><span class="line">![logo](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2634294714,2265844648&amp;fm=58&amp;s=4EE6885691B0CD92947DB9F002005035&amp;bpow=121&amp;bpoh=75)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://sspai.com/" target="_blank" rel="noopener">少数派</a></p>
-<p><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2634294714,2265844648&fm=58&s=4EE6885691B0CD92947DB9F002005035&bpow=121&bpoh=75" alt="logo"></p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">大标题1|大标题2|大标题3</span><br><span class="line">--|--|--</span><br><span class="line">内容1|内容2|内容3</span><br><span class="line">内容1|内容2|内容3</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>大标题1</th>
-<th>大标题2</th>
-<th>大标题3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内容1</td>
-<td>内容2</td>
-<td>内容3</td>
-</tr>
-<tr>
-<td>内容1</td>
-<td>内容2</td>
-<td>内容3</td>
-</tr>
-</tbody></table>
-<h2 id="插入图片-大小设置"><a href="#插入图片-大小设置" class="headerlink" title="插入图片 大小设置"></a>插入图片 大小设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方案一：默认大小  ![](/images/Desert.jpg) </span><br><span class="line">方案二：设置大小   &lt;img width=400 src=&quot;/images/Desert.jpg&quot; &gt;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/Desert.jpg" alt><br><img width="400" src="/images/Desert.jpg"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/fjkgithub/fjkgithub.github.io2019/08/27/jsonUtils/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fjk">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/fjkgithub.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fjk_blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="2019/08/27/jsonUtils/" itemprop="url">jsonUtils</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-27T13:57:35+08:00">
-                2019-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/json/" itemprop="url" rel="index">
-                    <span itemprop="name">json</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="jsonUtil工具类"><a href="#jsonUtil工具类" class="headerlink" title="jsonUtil工具类"></a>jsonUtil工具类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zzcm.shortvideospider.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonParseException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.type.TypeReference;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.DeserializationFeature;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.StringUtils;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(JsonUtil.class);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ObjectMapper mapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ObjectMapper <span class="title">getMapper</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mapper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toJson</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        String json = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            json = mapper.writeValueAsString(object);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonProcessingException var3) &#123;</span><br><span class="line">            logger.warn(var3.getMessage(), var3);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> json;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 功能描述: fromJson(Stinrg,List.class,Map.class)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Author</span>: fjk</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Date</span>: 2019/8/27 14:00</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">fromJson</span><span class="params">(String json, Class&lt;?&gt; collectionClass, Class... elementClasses)</span> </span>&#123;</span><br><span class="line">        Object t = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            t = mapper.readValue(json, mapper.getTypeFactory().constructParametricType(collectionClass, elementClasses));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception var5) &#123;</span><br><span class="line">            logger.warn(var5.getMessage(), var5);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (T) t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">object</span><span class="params">(String json, Class&lt;T&gt; clazz)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(StringUtils.isEmpty(json)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> mapper.readValue(json, clazz);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (JsonParseException var3) &#123;</span><br><span class="line">            logger.error(<span class="string">"JsonParseException"</span>, var3);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RuntimeException var4) &#123;</span><br><span class="line">            logger.error(<span class="string">"Runtime exception "</span> + StringUtils.abbreviate(json, <span class="number">80</span>), var4);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception var5) &#123;</span><br><span class="line">            logger.error(<span class="string">"Exception "</span> + StringUtils.abbreviate(json, <span class="number">80</span>), var5);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">object</span><span class="params">(String json, TypeReference typeReference)</span> </span>&#123;</span><br><span class="line">        Object t = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            t = mapper.readValue(json, typeReference);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception var4) &#123;</span><br><span class="line">            logger.warn(var4.getMessage(), var4);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (T) t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, ?&gt; getMapFromJson(String json) &#123;</span><br><span class="line">        Map map = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            map = (Map)mapper.readValue(json, Map.class);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception var3) &#123;</span><br><span class="line">            logger.warn(var3.getMessage(), var3);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="keyword">false</span>);</span><br><span class="line">        mapper.setDateFormat(<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="bean转json字符串"><a href="#bean转json字符串" class="headerlink" title="bean转json字符串"></a>bean转json字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = JsonUtil.toJson(Bean);</span><br></pre></td></tr></table></figure>
-
-<h2 id="json字符串转一层bean"><a href="#json字符串转一层bean" class="headerlink" title="json字符串转一层bean"></a>json字符串转一层bean</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bean bean = JsonUtil.object(String,Bean.class);</span><br></pre></td></tr></table></figure>
-
-<h2 id="json字符串转多层嵌套bean"><a href="#json字符串转多层嵌套bean" class="headerlink" title="json字符串转多层嵌套bean"></a>json字符串转多层嵌套bean</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bean bean = JsonUtil.object(String,<span class="keyword">new</span> TypeReference(Bean)&#123;&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="json字符串转Map"><a href="#json字符串转Map" class="headerlink" title="json字符串转Map"></a>json字符串转Map</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Sintrg,Objext&gt; map = JsonUtil.getMapFromJson(Bean);</span><br></pre></td></tr></table></figure>
-
-<h2 id="json字符串转List-lt-Map-lt-Sintrg-Objext-gt-gt"><a href="#json字符串转List-lt-Map-lt-Sintrg-Objext-gt-gt" class="headerlink" title="json字符串转List&lt;Map&lt;Sintrg,Objext&gt;&gt;"></a>json字符串转List&lt;Map&lt;Sintrg,Objext&gt;&gt;</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Map&lt;Sintrg,Objext&gt;&gt; listMap = fromJson(Stinrg,List.class,Map.class);</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1995,7 +1942,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2006,7 +1953,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
               <div class="site-state-item site-state-categories">
                 <a href="categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2017,7 +1964,7 @@ Lg:   scp /home/ad/log.txt root@192.168.1.110:/home/log</code></pre><h2 id="常�
               
               <div class="site-state-item site-state-tags">
                 <a href="tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

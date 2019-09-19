@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="idea,">
+  <meta name="keywords" content="mysql,mysql分区,">
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="常用快捷键   快捷键 提示    alt+insert 生成代码(如get,set方法,构造函数等)   alt+enter 导入包   alt+F7 查看某个方法在哪里有用到,或者按ctrl+鼠标点击   ctrl+e 最近更改的代码   ctrl+r 替换文本   ctrl+f 查找文本   ctrl+空格 代码提示   ctrl+p 方法参数提示   ctrl+shit+space 自动提">
-<meta name="keywords" content="idea">
+<meta name="description" content="建表同时创建分区TO_DAYS(date),每天一个分区。date字段一定要是索引 12345678910111213141516CREATE TABLE `user_stats_data` (`time_id` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`app_id` BIGINT(20)">
+<meta name="keywords" content="mysql,mysql分区">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea快捷键">
-<meta property="og:url" content="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/idea快捷键/index.html">
+<meta property="og:title" content="mysql表建分区">
+<meta property="og:url" content="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/19/mysql表建分区/index.html">
 <meta property="og:site_name" content="fjk_blog">
-<meta property="og:description" content="常用快捷键   快捷键 提示    alt+insert 生成代码(如get,set方法,构造函数等)   alt+enter 导入包   alt+F7 查看某个方法在哪里有用到,或者按ctrl+鼠标点击   ctrl+e 最近更改的代码   ctrl+r 替换文本   ctrl+f 查找文本   ctrl+空格 代码提示   ctrl+p 方法参数提示   ctrl+shit+space 自动提">
+<meta property="og:description" content="建表同时创建分区TO_DAYS(date),每天一个分区。date字段一定要是索引 12345678910111213141516CREATE TABLE `user_stats_data` (`time_id` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`app_id` BIGINT(20)">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/images/idea.png">
-<meta property="og:updated_time" content="2019-09-18T08:26:48.800Z">
+<meta property="og:updated_time" content="2019-09-19T06:19:33.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea快捷键">
-<meta name="twitter:description" content="常用快捷键   快捷键 提示    alt+insert 生成代码(如get,set方法,构造函数等)   alt+enter 导入包   alt+F7 查看某个方法在哪里有用到,或者按ctrl+鼠标点击   ctrl+e 最近更改的代码   ctrl+r 替换文本   ctrl+f 查找文本   ctrl+空格 代码提示   ctrl+p 方法参数提示   ctrl+shit+space 自动提">
-<meta name="twitter:image" content="https://github.com/images/idea.png">
+<meta name="twitter:title" content="mysql表建分区">
+<meta name="twitter:description" content="建表同时创建分区TO_DAYS(date),每天一个分区。date字段一定要是索引 12345678910111213141516CREATE TABLE `user_stats_data` (`time_id` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,`app_id` BIGINT(20)">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/16/idea快捷键/">
+  <link rel="canonical" href="https://github.com/fjkgithub/fjkgithub.github.io/2019/09/19/mysql表建分区/">
 
 
 
 
 
-  <title>idea快捷键 | fjk_blog</title>
+  <title>mysql表建分区 | fjk_blog</title>
   
 
 
@@ -306,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea快捷键</h1>
+          <h1 class="post-title" itemprop="name headline">mysql表建分区</h1>
         
 
         <div class="post-meta">
@@ -318,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-16T17:11:26+08:00">
-                2019-09-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T14:07:27+08:00">
+                2019-09-19
               </time>
             
 
@@ -341,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../../../categories/idea/" itemprop="url" rel="index">
-                    <span itemprop="name">idea</span>
+                  <a href="../../../../categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
                   </a>
                 </span>
 
@@ -378,124 +376,10 @@
       
 
       
-        <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>提示</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>alt+insert</td>
-<td>生成代码(如get,set方法,构造函数等)</td>
-</tr>
-<tr>
-<td>alt+enter</td>
-<td>导入包</td>
-</tr>
-<tr>
-<td>alt+F7</td>
-<td>查看某个方法在哪里有用到,或者按ctrl+鼠标点击</td>
-</tr>
-<tr>
-<td>ctrl+e</td>
-<td>最近更改的代码</td>
-</tr>
-<tr>
-<td>ctrl+r</td>
-<td>替换文本</td>
-</tr>
-<tr>
-<td>ctrl+f</td>
-<td>查找文本</td>
-</tr>
-<tr>
-<td>ctrl+空格</td>
-<td>代码提示</td>
-</tr>
-<tr>
-<td>ctrl+p</td>
-<td>方法参数提示</td>
-</tr>
-<tr>
-<td>ctrl+shit+space</td>
-<td>自动提示</td>
-</tr>
-<tr>
-<td>ctrl+shit+enter</td>
-<td>自动补全</td>
-</tr>
-<tr>
-<td>ctrl+x</td>
-<td>删除行</td>
-</tr>
-<tr>
-<td>ctrl+d</td>
-<td>复制行</td>
-</tr>
-<tr>
-<td>ctrl＋F12</td>
-<td>可以显示当前文件的结构</td>
-</tr>
-<tr>
-<td>ctrl+alt+ left/right</td>
-<td>返回至上次浏览的位置</td>
-</tr>
-<tr>
-<td>ctrl＋alt＋t</td>
-<td>可以把代码包在一块内，例如try/catch if</td>
-</tr>
-<tr>
-<td>ctrl+alt+l</td>
-<td>格式化代码</td>
-</tr>
-<tr>
-<td>ctrl+alt+o</td>
-<td>去掉没有用的import包</td>
-</tr>
-<tr>
-<td>ctrl+alt+t</td>
-<td>快速生成if else try catch</td>
-</tr>
-<tr>
-<td>ctrl+h</td>
-<td>查询类的父类和子类的层级关系</td>
-</tr>
-<tr>
-<td>ctrl+alt+b</td>
-<td>查看子类方法实现</td>
-</tr>
-<tr>
-<td>ctrl+/ 或 ctrl+chift+/</td>
-<td>注释（// 或者/<em>…</em>/ ）</td>
-</tr>
-<tr>
-<td>shift+shift</td>
-<td>搜索任何東西</td>
-</tr>
-<tr>
-<td>shift+F6</td>
-<td>重构 – 重命名</td>
-</tr>
-<tr>
-<td>ctrl+n</td>
-<td>查找哪个类</td>
-</tr>
-<tr>
-<td>ctrl+shift+n</td>
-<td>查找哪个文件</td>
-</tr>
-<tr>
-<td>ctrl+z</td>
-<td>撤回</td>
-</tr>
-<tr>
-<td>ctrl+shift+z</td>
-<td>恢复撤回</td>
-</tr>
-</tbody></table>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="/images/idea.png" alt></p>
+        <h2 id="建表同时创建分区"><a href="#建表同时创建分区" class="headerlink" title="建表同时创建分区"></a>建表同时创建分区</h2><p>TO_DAYS(<code>date</code>),每天一个分区。date字段一定要是索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user_stats_data` (</span><br><span class="line">`time_id` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">`app_id` BIGINT(20) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;应用id&apos;,</span><br><span class="line">`uid` VARCHAR(50) NOT NULL,</span><br><span class="line">`date` DATE NOT NULL COMMENT &apos;日期&apos;,</span><br><span class="line">`dimension` VARCHAR(255) NOT NULL,</span><br><span class="line">`EPBCODE` INT(11) DEFAULT &apos;0&apos; COMMENT &apos;书籍曝光&apos;,</span><br><span class="line">`BCODE` INT(11) DEFAULT &apos;0&apos; COMMENT &apos;书籍点击&apos;,</span><br><span class="line">UNIQUE KEY `unique_key` (`app_id`,`uid`,`date`,`dimension`),</span><br><span class="line">KEY `date_state_uid_date` (`uid`,`date`,`dimension`),</span><br><span class="line">KEY `date_type` (`date`,`dimension`) USING BTREE,</span><br><span class="line">KEY `date_index` (`date`) USING HASH</span><br><span class="line">) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT=&apos;用户操作节点uid按天汇总表&apos;</span><br><span class="line">PARTITION BY RANGE (TO_DAYS(`date`))</span><br><span class="line">(PARTITION p20190628 VALUES LESS THAN (TO_DAYS(&apos;2019-06-29&apos;)) ENGINE = INNODB,</span><br><span class="line">PARTITION p20190629 VALUES LESS THAN (TO_DAYS(&apos;2019-06-30&apos;)) ENGINE = INNODB);</span><br></pre></td></tr></table></figure>
 
+<h2 id="定时任务每天创建后三天的表分区"><a href="#定时任务每天创建后三天的表分区" class="headerlink" title="定时任务每天创建后三天的表分区"></a>定时任务每天创建后三天的表分区</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateDayPartitonJob</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String table;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String partitonSql;</span><br><span class="line">    <span class="meta">@Resource</span>(name = <span class="string">"buzJdbcTemplate"</span>)</span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 1 * * ?"</span>)</span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//书籍活跃留存统计分区表</span></span><br><span class="line">        table = <span class="string">"app_retention_day_stats"</span>;</span><br><span class="line">        partitonSql = <span class="string">"ALTER TABLE `%s` ADD PARTITION(PARTITION p%s VALUES LESS THAN (TO_DAYS('%s')) ENGINE = INNODB);"</span>;</span><br><span class="line">        createPartiton(table,partitonSql,jdbc);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createPartiton</span><span class="params">(String table,String sql,JdbcTemplate jdbcTemplate)</span></span>&#123;</span><br><span class="line">        log.info(<span class="string">"检测表是否存..."</span>);</span><br><span class="line">        <span class="keyword">boolean</span> isExe = isTable(table,jdbcTemplate);</span><br><span class="line">        log.info(<span class="string">"表情况[若true,则结束.]:"</span>+isExe);</span><br><span class="line">        <span class="keyword">if</span>(!isExe)&#123;</span><br><span class="line">            log.warn(<span class="string">"警告：表不存在:"</span>+table);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String afterZeroDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">0</span>);</span><br><span class="line">        String afterOneDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">1</span>);</span><br><span class="line">        String afterTwoDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">2</span>);</span><br><span class="line">        String afterThreeDay = DateUtil.getBeforeOrAfterDays(DateUtil.YYYYMMDD,<span class="number">3</span>);</span><br><span class="line">        createPartiton(table,sql,afterZeroDay,afterOneDay,jdbcTemplate);</span><br><span class="line">        createPartiton(table,sql,afterOneDay,afterTwoDay,jdbcTemplate);</span><br><span class="line">        createPartiton(table,sql,afterTwoDay,afterThreeDay,jdbcTemplate);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createPartiton</span><span class="params">(String table,String partitonSql,String afterDay,String afterTeoDay,JdbcTemplate jdbcTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            log.info(<span class="string">"准备创建分区."</span>);</span><br><span class="line">            <span class="comment">//检查分区是否存在</span></span><br><span class="line">            <span class="keyword">boolean</span> isExits = isPartiton(table,afterDay,jdbcTemplate);</span><br><span class="line">            <span class="keyword">if</span> (isExits)&#123;</span><br><span class="line">                log.info(<span class="string">"table=&#123;&#125;，p=&#123;&#125;以存在该分区"</span>,table,afterDay);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String exe = String.format(partitonSql,table,afterDay,afterTeoDay);</span><br><span class="line">            log.info(<span class="string">"准备执行..."</span>);</span><br><span class="line">            <span class="keyword">int</span> num = jdbcTemplate.update(exe);</span><br><span class="line">            log.info(<span class="string">"执行完成，影响行数:"</span> + num );</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.error(<span class="string">"创建:`"</span>+table+<span class="string">"`表分区失败"</span>,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTable</span><span class="params">(String table,JdbcTemplate jdbc)</span></span>&#123;</span><br><span class="line">        List list = jdbc.queryForList(String.format(<span class="string">"SHOW TABLES LIKE '%s' "</span>,table));</span><br><span class="line">        <span class="keyword">if</span>(list != <span class="keyword">null</span> &amp;&amp; list.size() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPartiton</span><span class="params">(String table,String date,JdbcTemplate jdbcTemplate)</span></span>&#123;</span><br><span class="line">        String sql =<span class="string">"SELECT partition_name part FROM information_schema.partitions WHERE "</span> +</span><br><span class="line">                <span class="string">"  table_schema = SCHEMA() AND table_name='%s' AND partition_name = '%s' "</span>;</span><br><span class="line">        List list = jdbcTemplate.queryForList(String.format(sql,table,<span class="string">'p'</span>+date));</span><br><span class="line">        <span class="keyword">if</span>(list != <span class="keyword">null</span> &amp;&amp; list.size() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -512,7 +396,9 @@
       
         <div class="post-tags">
           
-            <a href="../../../../tags/idea/" rel="tag"><i class="fa fa-tag"></i> idea</a>
+            <a href="../../../../tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+          
+            <a href="../../../../tags/mysql分区/" rel="tag"><i class="fa fa-tag"></i> mysql分区</a>
           
         </div>
       
@@ -540,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../../../08/27/MarkDown使用手册/" rel="next" title="MarkDown使用手册">
-                <i class="fa fa-chevron-left"></i> MarkDown使用手册
+              <a href="../mysql表字段支持emoji表情/" rel="next" title="mysql表字段支持emoji表情">
+                <i class="fa fa-chevron-left"></i> mysql表字段支持emoji表情
               </a>
             
           </div>
@@ -549,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../linux常用命令/" rel="prev" title="linux常用命令">
-                linux常用命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -693,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-number">1.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">2.</span> <span class="nav-text">图片</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建表同时创建分区"><span class="nav-number">1.</span> <span class="nav-text">建表同时创建分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时任务每天创建后三天的表分区"><span class="nav-number">2.</span> <span class="nav-text">定时任务每天创建后三天的表分区</span></a></li></ol></div>
             
 
           </div>
