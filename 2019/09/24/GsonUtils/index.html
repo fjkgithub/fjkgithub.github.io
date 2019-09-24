@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>GsonUtils | fjk_blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="json">
+    <link rel="shortcut icon" href="../../../../img/myAvatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../../../../css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="../../../../index.html" class="avatar waves-effect waves-circle waves-light">
+          <img src="../../../../img/myAvatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">fjk</h5>
+          <a href="mailto:812386413@qq.com" title="812386413@qq.com" class="mail">
+            
+              <span>8</span>
+            
+              <span>1</span>
+            
+              <span>2</span>
+            
+              <span>3</span>
+            
+              <span>8</span>
+            
+              <span>6</span>
+            
+              <span>4</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/fjkgithub" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="../../../../index.html"  >
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="../../../../categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="../../../../archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/fjkgithub" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>GsonUtils</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">GsonUtils</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-24T03:17:51.000Z" itemprop="datePublished" class="page-time">
+  2019-09-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="../../../../categories/json/">json</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-GsonUtils"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">GsonUtils</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-24 11:17:51" datetime="2019-09-24T03:17:51.000Z"  itemprop="datePublished">2019-09-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="../../../../categories/json/">json</a></li></ul>
+
+
+
+            
+	<span id="" class="leancloud_visitors" data-flag-title="GsonUtils" title="GsonUtils">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="pom-xml文件的依赖"><a href="#pom-xml文件的依赖" class="headerlink" title="pom.xml文件的依赖"></a>pom.xml文件的依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;gson&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.8.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="GsonUtils工具类"><a href="#GsonUtils工具类" class="headerlink" title="GsonUtils工具类"></a>GsonUtils工具类</h2><p>GsonJson类自定义，可多层嵌套bean</p>
+<!-- more>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.zzcm.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> com.google.gson.reflect.TypeToken;</span><br><span class="line"><span class="keyword">import</span> com.zzcm.push.vo.value.GsonJson;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Type;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: fjk</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/9/24 10:12</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GsonUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Gson gson = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (gson == <span class="keyword">null</span>) &#123;</span><br><span class="line">            gson = <span class="keyword">new</span> Gson();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">GsonUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将object对象转成json字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> object</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        String gsonString = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (gson != <span class="keyword">null</span>) &#123;</span><br><span class="line">            gsonString = gson.toJson(object);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> gsonString;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将gsonString转成泛型bean</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> gsonString</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> cls</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">toBean</span><span class="params">(String gsonString, Class&lt;T&gt; cls)</span> </span>&#123;</span><br><span class="line">        T t = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (gson != <span class="keyword">null</span>) &#123;</span><br><span class="line">            t = gson.fromJson(gsonString, cls);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将gsonString转成多层嵌套bean</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> gsonString</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">toBean</span><span class="params">(String gsonString, Type type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Gson().fromJson(gsonString, type);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将gsonString转成泛型Map</span></span><br><span class="line"><span class="comment">     * bean 是多层嵌套</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> gsonString</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">Map&lt;String, T&gt; <span class="title">toMap</span><span class="params">(String gsonString, Type type)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, T&gt; map = <span class="keyword">new</span> Gson().fromJson(gsonString, type);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转成list中有map</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> gsonString</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; List&lt;Map&lt;String, T&gt;&gt; toListMap(String gsonString, Type type) &#123;</span><br><span class="line">        List&lt;Map&lt;String, T&gt;&gt; list = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (gson != <span class="keyword">null</span>) &#123;</span><br><span class="line">            list = gson.fromJson(gsonString, type);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转成泛型list</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> gsonString</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">toList</span><span class="params">(String gsonString, Type type)</span> </span>&#123;</span><br><span class="line">        List&lt;T&gt; list = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (gson != <span class="keyword">null</span>) &#123;</span><br><span class="line">            list = gson.fromJson(gsonString, type);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">        String gsonString = "";</span></span><br><span class="line"><span class="comment">        List&lt;GsonJson&gt; list = GsonUtils.toList(gsonString,new TypeToken&lt;List&lt;GsonJson&gt;&gt;()&#123;&#125;.getType());</span></span><br><span class="line"><span class="comment">        List&lt;Map&lt;String,GsonJson&gt;&gt; listMaps = GsonUtils.toListMap(gsonString,new TypeToken&lt;List&lt;Map&lt;String,GsonJson&gt;&gt;&gt;()&#123;&#125;.getType());</span></span><br><span class="line"><span class="comment">        Map&lt;String,GsonJson&gt; map = GsonUtils.toMap(gsonString,new TypeToken&lt;Map&lt;String,GsonJson&gt;&gt;()&#123;&#125;.getType());</span></span><br><span class="line"><span class="comment">        Map&lt;String,Map&lt;String,GsonJson&gt;&gt; valueMap = GsonUtils.toMap(gsonString,new TypeToken&lt;Map&lt;String,Map&lt;String,GsonJson&gt;&gt;&gt;()&#123;&#125;.getType());</span></span><br><span class="line"><span class="comment">        GsonJson bean = GsonUtils.toBean(gsonString,new TypeToken&lt;GsonJson&gt;()&#123;&#125;.getType());</span></span><br><span class="line"><span class="comment">        GsonJson bean1 = GsonUtils.toBean(gsonString,GsonJson.class);</span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>-->
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-24T03:21:11.605Z" itemprop="dateUpdated">2019-09-24 11:21:11</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="" target="_blank" rel="external">https://github.com/fjkgithub/fjkgithub.github.io/2019/09/24/GsonUtils/</a>
+        
+    </div>
+    <footer>
+        <a href="https://github.com/fjkgithub/fjkgithub.github.io">
+            <img src="../../../../img/myAvatar.jpg" alt="fjk">
+            fjk
+        </a>
+    </footer>
+</blockquote>
+
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/json/">json</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/09/24/GsonUtils/&title=《GsonUtils》 — fjk_blog&pic=https://github.com/fjkgithub/fjkgithub.github.io/img/myAvatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/09/24/GsonUtils/&title=《GsonUtils》 — fjk_blog&source=一个有决心的人，将会找到他的道路。——佚名" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="next">
+      <a href="../../19/springboot集成redis/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">springboot集成redis</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pom-xml文件的依赖"><span class="post-toc-number">1.</span> <span class="post-toc-text">pom.xml文件的依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GsonUtils工具类"><span class="post-toc-number">2.</span> <span class="post-toc-text">GsonUtils工具类</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://github.com/fjkgithub" target="_blank">github</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                fjk &copy; 2019
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/09/24/GsonUtils/&title=《GsonUtils》 — fjk_blog&pic=https://github.com/fjkgithub/fjkgithub.github.io/img/myAvatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/09/24/GsonUtils/&title=《GsonUtils》 — fjk_blog&source=一个有决心的人，将会找到他的道路。——佚名" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQW7jMBAEwPz/09nrAslqu2dIwYfSyTBkicUDOe7h11d8fQdX+4S/v/95z/OvDl94eHh4R4ee836+/hmT39mOBw8PD+8d3r9e+fyyf5GS6Wth+TTh4eHhfRqv3VQS5GbbwMPDw/t8XlI6z36VbCF4eHh4n8PbPHoWTCQh76tZCx4eHt68V/U12yTe/Hylv4eHh4d36EBAXi7PZjc/LlCPFg8PD+8CL19wZ4PYlL95dPufwh0PDw/vAm/T0JpRn0ONdnsoim88PDy8NW8/lPZ4walyPPoVHh4e3gVeXjRvQt68dE6mLN+E8PDw8G7wNg34fEDtJtQe5xo2wPDw8PBGvPZBsxI8H0ob/g5PluHh4eGteW3RnJfU+QQ9b0h5aV4PHQ8PD6/k5ctuu3xvyu5NnIGHh4f3Di9f4tv/+PlynxxTSGIOPDw8vDd5s4fm09GeBWsDiF9ceHh4eBd4m5bSd3nlxfTmnmGagoeHhzfinW3qt8ew2oV+eOgBDw8P7yivLa9nBXe+YdRFcx7p4uHh4S14mxZXG622U9ZuIb98xsPDw7vAO3vQqo1xjx0RGIUpeHh4eDNe3oiaFc37iZsFynh4eHjv8GYvaCPa2VTmo/0ljMDDw8M7yjt7LGDWTmujh/x+PDw8vHu8vL3ULvSbuHYznjpRxsPDwxvxksX3uXhtF/1NUZ4HxHh4eHj3eMkLNuHCLPA9cOHh4eFdgJ0KHZKu/abUrg9j4eHh4V3gnVpjk+E+D+Je2wwPDw/vBm8TQ8yQbfnebgx4eHh47/CSkGLzf//YHtUeEcPDw8P7MF7+nLYoTwruaJx4eHh4H8lrC9+88daW/lc2Bjw8PLxDEW2+lOeMZOgXsxY8PDy8mLf5w/9Og7/dQvDw8PCu8f4At13kKR2MmSUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="../../../../js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="../../../../js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="../../../../js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="../../../../js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="../../../../js/plugins/leancloud_visitors.js?v=1.4.4"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
