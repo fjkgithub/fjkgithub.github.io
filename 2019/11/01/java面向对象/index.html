@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>java面向对象 | fjk_blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="java">
+    <link rel="shortcut icon" href="../../../../img/myAvatar.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../../../../css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":true,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="../../../../index.html" class="avatar waves-effect waves-circle waves-light">
+          <img src="../../../../img/myAvatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">fjk</h5>
+          <a href="mailto:812386413@qq.com" title="812386413@qq.com" class="mail">
+            
+              <span>8</span>
+            
+              <span>1</span>
+            
+              <span>2</span>
+            
+              <span>3</span>
+            
+              <span>8</span>
+            
+              <span>6</span>
+            
+              <span>4</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/fjkgithub" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="../../../../index.html"  >
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="../../../../categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="../../../../archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="https://github.com/fjkgithub" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>java面向对象</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">java面向对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-01T02:08:35.000Z" itemprop="datePublished" class="page-time">
+  2019-11-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="../../../../categories/java/">java</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-java面向对象"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">java面向对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-01 10:08:35" datetime="2019-11-01T02:08:35.000Z"  itemprop="datePublished">2019-11-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="../../../../categories/java/">java</a></li></ul>
+
+
+
+            
+	<span id="" class="leancloud_visitors" data-flag-title="java面向对象" title="java面向对象">
+		
+			<i class="icon icon-eye"></i>
+		
+		<span class="leancloud-visitors-count"></span>
+	</span>
+ 
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="面向对象的三大基本特征"><a href="#面向对象的三大基本特征" class="headerlink" title="面向对象的三大基本特征"></a>面向对象的三大基本特征</h2><p>(1)封装 （2）继承 （3）多态</p>
+<h2 id="五大基本原则"><a href="#五大基本原则" class="headerlink" title="五大基本原则"></a>五大基本原则</h2><p>单一职责原则<br>其核心思想为：一个类，最好只做一件事。单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。职责过多，可能引起它变化的原因就越多，这将导致职责依赖，相互之间就产生影响，从而大大损伤其内聚性和耦合度。</p>
+<p>开放封闭原则<br>其核心思想是：软件实体应该是可扩展的，而不可修改的。也就是，对扩展开放，对修改封闭的。开放封闭原则主要体现在两个方面1、对扩展开放，意味着有新的需求或变化时，可以对现有代码进行扩展，以适应新的情况。2、对修改封闭，意味着类一旦设计完成，就可以独立完成其工作，而不要对其进行任何尝试的修改。 实现开开放封闭原则的核心思想就是对抽象编程，而不对具体编程，因为抽象相对稳定。。</p>
+<a id="more"></a>
+<p>Liskov替换原则<br>其核心思想是：子类必须能够替换其基类。这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。在父类和子类的具体行为中，必须严格把握继承层次中的关系和特征，将基类替换为子类，程序的行为不会发生任何变化。同时，这一约束反过来则是不成立的，子类可以替换基类，但是基类不一定能替换子类。</p>
+<p>依赖倒置原则<br>其核心思想是：依赖于抽象。具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 我们知道，依赖一定会存在于类与类、模块与模块之间。当两个模块之间存在紧密的耦合关系时，最好的方法就是分离接口和实现：在依赖之间定义一个抽象的接口使得高层模块调用接口，而底层模块实现接口的定义，以此来有效控制耦合关系，达到依赖于抽象的设计目标。</p>
+<p>接口隔离原则<br>其核心思想是：使用多个小的专门的接口，而不要使用一个大的总接口。 具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染。 </p>
+<p>以上就是5个基本的面向对象设计原则，它们就像面向对象程序设计中的金科玉律，遵守它们可以使我们的代码更加鲜活，易于复用，易于拓展，灵活优雅。</p>
+<h2 id="值传递和引用传递"><a href="#值传递和引用传递" class="headerlink" title="值传递和引用传递"></a>值传递和引用传递</h2><p>值传递（pass by value）是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。</p>
+<p>引用传递（pass by reference）是指在调用函数时将实际参数的地址直接传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。</p>
+<table>
+<thead>
+<tr>
+<th>区别</th>
+<th>值传递</th>
+<th>引用传递</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>根本区别</td>
+<td>会创建副本</td>
+<td>不创建副本，使用地址</td>
+</tr>
+<tr>
+<td>所以</td>
+<td>函数<strong>无法改变</strong>原始对象</td>
+<td>函数<strong>可以改变</strong>原始对象</td>
+</tr>
+</tbody></table>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-01T02:30:11.383Z" itemprop="dateUpdated">2019-11-01 10:30:11</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="" target="_blank" rel="external">https://github.com/fjkgithub/fjkgithub.github.io/2019/11/01/java面向对象/</a>
+        
+    </div>
+    <footer>
+        <a href="https://github.com/fjkgithub/fjkgithub.github.io">
+            <img src="../../../../img/myAvatar.jpg" alt="fjk">
+            fjk
+        </a>
+    </footer>
+</blockquote>
+
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/java/">java</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/11/01/java面向对象/&title=《java面向对象》 — fjk_blog&pic=https://github.com/fjkgithub/fjkgithub.github.io/img/myAvatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/11/01/java面向对象/&title=《java面向对象》 — fjk_blog&source=面向对象的三大基本特征(1)封装 （2）继承 （3）多态
+五大基本原则单一职责原则其核心思想为：一个类，最好只做一件事。单一职责原则可以看做是低耦合、高内..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="next">
+      <a href="../../../09/24/GsonUtils/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">GsonUtils</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面向对象的三大基本特征"><span class="post-toc-number">1.</span> <span class="post-toc-text">面向对象的三大基本特征</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五大基本原则"><span class="post-toc-number">2.</span> <span class="post-toc-text">五大基本原则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#值传递和引用传递"><span class="post-toc-number">3.</span> <span class="post-toc-text">值传递和引用传递</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://github.com/fjkgithub" target="_blank">github</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                fjk &copy; 2019
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/11/01/java面向对象/&title=《java面向对象》 — fjk_blog&pic=https://github.com/fjkgithub/fjkgithub.github.io/img/myAvatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/fjkgithub/fjkgithub.github.io/2019/11/01/java面向对象/&title=《java面向对象》 — fjk_blog&source=面向对象的三大基本特征(1)封装 （2）继承 （3）多态
+五大基本原则单一职责原则其核心思想为：一个类，最好只做一件事。单一职责原则可以看做是低耦合、高内..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQY7jQAgFUN//0pntSD12PlCkM9LzKuo4tl+1VGDguuLj9dfx/Je7b39eLfnV68dxbRx4eHh4g0e/u1wVk3xOnipn3y4BHh4e3hqvun0/36a6cM/Pk/zq9u94eHh4X8BLkHlmm6fgeHh4eP8vLy8ZVB8oDyF4eHh438BbufTj5j4JGyu1Fjw8PLyY1yuq/u7nlf4eHh4e3rir/rzh5pvy8xXmJePbJ8HDw8Nb4OUbbkKdJMeT0u2bpcTDw8M7yqtu+jmyOgqQL2ihXIKHh4e3wMvHnpJyaq/A2is3FIq2eHh4eEd5yVhVtXE1HzvoPdWbdwU8PDy8BV5vI86bVb02fzV9v8on4eHh4TWe/HCbajLFUE3Nm5NleHh4eANeXnjtpb/58vWGD948Mx4eHt4CL2nSTxLlXgnjTYmhisfDw8Nb5uUv//koVa8QnAOiNhgeHh7eUV7CmKTLvWGFagGikF7j4eHhHeX1xggmQaUaAArTZHh4eHgLvGrTKw8V1eJCtZ0Wdfbw8PDwPsjLW/v5Ob3i7Ci04OHh4S3wei3/amKdF2Hnd/mHCA8PD+8oL99eqwMB1VZZMnZQboPh4eHhrfEmzaReAj0fTo3Ku3h4eHgLvCoyPydPiydtuSgRx8PDw/sIr9cMmw+bJsNV1SXGw8PD2+PlrfpqOaMaSK7i8SbM4OHh4S3z8o24ut3n1+kVcPHw8PA+z+ulztXlyMPG5Lh9Y8DDw8Mb817FoxpIqiudh5DoH4CHh4e3wDv1wt9LrKtnJp9HkQQPDw8v5s2DQW8sYN4Si+6Lh4eHt8bLb9P7tloIng9j4eHh4X0nr9eaqoLzxT0cGPDw8PAO8SZpdL58varCscwdDw8P71Cds1oO6DXDekWHA7UWPDw8vDO795Vv3NWQkweGjRIGHh4eXov3B5mmzxQuXzFEAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="../../../../js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="../../../../js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="../../../../js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="../../../../js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+<script type="text/javascript" src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script type="text/javascript" src="../../../../js/plugins/leancloud_visitors.js?v=1.4.4"></script>
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
